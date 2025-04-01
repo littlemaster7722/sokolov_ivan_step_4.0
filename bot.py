@@ -16,7 +16,7 @@ async def send_welcome(message: types.Message):
 # Обработчик текстовых сообщений
 @start_router.message(F.text)
 async def echo(message: types.Message):
-    await message.answer(message.text)
+    await message.answer(f"ваше прошлое сообщение: {message.text}")
 
 async def main():
     dp.include_router(start_router)
